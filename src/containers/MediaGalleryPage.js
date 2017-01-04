@@ -2,13 +2,14 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import {
   selectImageAction, searchMediaAction,
-  selectVideoAction } from '../actions/mediaActions';
+  selectVideoAction
+} from '../actions/mediaActions';
 import PhotoPage from '../components/PhotoPage';
 import VideoPage from '../components/VideoPage';
 import '../styles/style.css';
 
 // MediaGalleryPage Component
-class MediaGalleryPage extends Component {
+export class MediaGalleryPage extends Component {
   constructor() {
     super();
     this.handleSearch = this.handleSearch.bind(this);
@@ -17,7 +18,7 @@ class MediaGalleryPage extends Component {
   }
 
   // Dispatches *searchMediaAction*  immediately after initial rendering
- componentDidMount() {
+  componentDidMount() {
     this.props.dispatch(searchMediaAction('kitten'));
   }
 
@@ -52,7 +53,6 @@ class MediaGalleryPage extends Component {
           />
           <input
             type="submit"
-       className="btn btn-primary"
             value="Search Library"
             onClick={this.handleSearch}
           />
@@ -83,7 +83,7 @@ MediaGalleryPage.propTypes = {
   dispatch: PropTypes.func.isRequired
 };
 
- // Subscribe component to redux store and merge the state into component's props
+/* Subscribe component to redux store and merge the state into component\s props */
 const mapStateToProps = ({ images, videos }) => ({
   images: images[0],
   selectedImage: images.selectedImage,
@@ -91,6 +91,6 @@ const mapStateToProps = ({ images, videos }) => ({
   selectedVideo: videos.selectedVideo
 });
 
-// connect method from react-router connects the component with redux store
+/* connect method from react-router connects the component with redux store */
 export default connect(
   mapStateToProps)(MediaGalleryPage);

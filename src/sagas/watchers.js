@@ -1,5 +1,5 @@
 import { takeLatest } from 'redux-saga';
-import { searchMediaSaga } from './mediaSaga';
+import searchMediaSaga from './mediaSaga';
 import * as types from '../constants/actionTypes';
 
 // Watches for SEARCH_MEDIA_REQUEST action type asynchronously

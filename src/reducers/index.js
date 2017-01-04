@@ -4,8 +4,7 @@ import videos from './videoReducer';
 
 // Combines all reducers to a single reducer function
 const rootReducer = combineReducers({
-  images, 
-  videos
+  images, videos
 });
 
 export default rootReducer;
