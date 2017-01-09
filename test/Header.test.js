@@ -10,6 +10,7 @@ describe('Test for Header component', () => {
     expect(wrapper.length).toEqual(true);
     expect(wrapper.is('.text-center')).toEqual(true);
     expect(wrapper.find(Link).length).toEqual(1);
+    expect(wrapper.find(Link).props().to).toEqual('library');
     expect(wrapper.find(IndexLink).length).toEqual(1);
   });
 });
